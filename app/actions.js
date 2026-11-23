@@ -14,6 +14,7 @@ function ambilData(formData) {
   };
 }
 
+// CREATE
 export async function createBuku(formData) {
   const data = ambilData(formData);
   if (!data.judul || !data.penulis) return;
@@ -22,6 +23,7 @@ export async function createBuku(formData) {
   redirect("/");
 }
 
+// UPDATE
 export async function updateBuku(id, formData) {
   const data = ambilData(formData);
   if (!data.judul || !data.penulis) return;
@@ -30,6 +32,7 @@ export async function updateBuku(id, formData) {
   redirect("/");
 }
 
+// DELETE
 export async function deleteBuku(id) {
   await prisma.buku.delete({ where: { id } });
   revalidatePath("/");

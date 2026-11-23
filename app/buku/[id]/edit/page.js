@@ -25,6 +25,10 @@ export default async function EditBuku({ params }) {
             Penulis
             <input name="penulis" defaultValue={buku.penulis} required />
           </label>
+          <label>
+            Link Gambar Cover (opsional)
+            <input name="cover" type="url" defaultValue={buku.cover ?? ""} placeholder="https://contoh.com/cover.jpg" />
+          </label>
           <div className="row">
             <label>
               Tahun Terbit
