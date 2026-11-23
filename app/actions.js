@@ -10,10 +10,10 @@ function ambilData(formData) {
     penulis: String(formData.get("penulis") || "").trim(),
     tahun: parseInt(formData.get("tahun"), 10) || new Date().getFullYear(),
     stok: parseInt(formData.get("stok"), 10) || 0,
+    cover: String(formData.get("cover") || "").trim() || null,
   };
 }
 
-// CREATE
 export async function createBuku(formData) {
   const data = ambilData(formData);
   if (!data.judul || !data.penulis) return;
@@ -22,7 +22,6 @@ export async function createBuku(formData) {
   redirect("/");
 }
 
-// UPDATE
 export async function updateBuku(id, formData) {
   const data = ambilData(formData);
   if (!data.judul || !data.penulis) return;
@@ -31,7 +30,6 @@ export async function updateBuku(id, formData) {
   redirect("/");
 }
 
-// DELETE
 export async function deleteBuku(id) {
   await prisma.buku.delete({ where: { id } });
   revalidatePath("/");

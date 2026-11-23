@@ -17,6 +17,10 @@ export default function TambahBuku() {
             Penulis
             <input name="penulis" placeholder="Contoh: Andrea Hirata" required />
           </label>
+          <label>
+            Link Gambar Cover (opsional)
+            <input name="cover" type="url" placeholder="https://contoh.com/cover.jpg" />
+          </label>
           <div className="row">
             <label>
               Tahun Terbit

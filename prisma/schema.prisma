@@ -14,5 +14,6 @@ model Buku {
   penulis   String
   tahun     Int
   stok      Int      @default(1)
+  cover     String?
   createdAt DateTime @default(now())
 }

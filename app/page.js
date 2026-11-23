@@ -26,6 +26,7 @@ export default async function Home() {
             <thead>
               <tr>
                 <th>#</th>
+                <th>Cover</th>
                 <th>Judul</th>
                 <th>Penulis</th>
                 <th>Tahun</th>
@@ -37,6 +38,14 @@ export default async function Home() {
               {daftar.map((b, i) => (
                 <tr key={b.id}>
                   <td>{i + 1}</td>
+                  <td>
+                    {b.cover ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={b.cover} alt={`Cover ${b.judul}`} className="thumb" />
+                    ) : (
+                      <div className="thumb placeholder">📖</div>
+                    )}
+                  </td>
                   <td><strong>{b.judul}</strong></td>
                   <td>{b.penulis}</td>
                   <td>{b.tahun}</td>
