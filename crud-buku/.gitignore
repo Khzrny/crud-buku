@@ -1,0 +1,6 @@
+node_modules
+.next
+.env
+.env*.local
+.vercel
+# CATATAN: prisma/dev.db SENGAJA tidak di-ignore agar ikut ke GitHub (read-only di Vercel)
